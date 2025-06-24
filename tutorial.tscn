@@ -1,0 +1,364 @@
+[gd_scene load_steps=18 format=3 uid="uid://ctujcfl8ea38l"]
+
+[ext_resource type="Texture2D" uid="uid://hoi0etshj72f" path="res://Image Assets/Box.PNG" id="2_5mrt3"]
+[ext_resource type="FontFile" uid="uid://w2k42lcmfuc3" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="2_ehuit"]
+[ext_resource type="PackedScene" uid="uid://bmggon5u2jkbw" path="res://Scenes/AnimatedMainMenuScreen.tscn" id="3_5mrt3"]
+[ext_resource type="Script" uid="uid://dh7t21wyy553p" path="res://Scripts/Tutorial/button.gd" id="3_ehuit"]
+[ext_resource type="Texture2D" uid="uid://c54jjln0tujq3" path="res://Image Assets/silisilabuttonhover.png" id="4_7vrqn"]
+[ext_resource type="Texture2D" uid="uid://dhb6x7hdpmgb2" path="res://Image Assets/silisilabuttonpress.png" id="5_bhfnd"]
+[ext_resource type="FontFile" uid="uid://d01411ragm2o4" path="res://Fonts/KiwiSoda.ttf" id="5_rwowx"]
+[ext_resource type="Texture2D" uid="uid://b4jqjmsiwub0e" path="res://Image Assets/SiliSilaKeyButton.png" id="6_hu44a"]
+[ext_resource type="Texture2D" uid="uid://ci6nrqdv3amcs" path="res://Image Assets/silisilabutton.png" id="6_tvjhf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4t6hg"]
+bg_color = Color(0, 0, 0, 0.372549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mrt3"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rwowx"]
+texture = ExtResource("2_5mrt3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vrqn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmw6g"]
+texture = ExtResource("4_7vrqn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4hjyh"]
+texture = ExtResource("5_bhfnd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bsk3x"]
+texture = ExtResource("6_tvjhf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0cr88"]
+texture = ExtResource("6_hu44a")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("3_5mrt3")]
+position = Vector2(640, 360)
+
+[node name="dark" type="Panel" parent="Node2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -648.0
+offset_top = -370.0
+offset_right = 644.0
+offset_bottom = 365.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4t6hg")
+
+[node name="boxback" type="Panel" parent="Node2D"]
+offset_left = -424.0
+offset_top = -242.0
+offset_right = 422.0
+offset_bottom = 237.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5mrt3")
+
+[node name="box" type="Panel" parent="Node2D"]
+offset_left = -447.0
+offset_top = -251.0
+offset_right = 442.0
+offset_bottom = 251.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rwowx")
+
+[node name="back button" type="Button" parent="Node2D"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = 273.0
+offset_right = 135.0
+offset_bottom = 327.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7vrqn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vmw6g")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4hjyh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bsk3x")
+text = "Back To Main Menu"
+script = ExtResource("3_ehuit")
+
+[node name="tut" type="Label" parent="Node2D"]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.0
+offset_top = -219.0
+offset_right = 104.0
+offset_bottom = -120.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.503297, 0.39728, 0.105467, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_rwowx")
+theme_override_font_sizes/font_size = 64
+text = "Tutorial"
+horizontal_alignment = 1
+
+[node name="win" type="Label" parent="Node2D"]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = -142.0
+offset_right = 352.0
+offset_bottom = -119.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.503297, 0.39728, 0.105467, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 20
+text = "Win by dodging incoming projectiles and surviving the timer."
+horizontal_alignment = 1
+
+[node name="items" type="Label" parent="Node2D"]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -410.5
+offset_top = 170.0
+offset_right = 410.5
+offset_bottom = 209.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.503297, 0.39728, 0.105467, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 20
+text = "Some stages may contain powerful items
+to help you along your journey…"
+horizontal_alignment = 1
+
+[node name="esc" type="Label" parent="Node2D"]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 86.0
+offset_top = 54.0
+offset_right = 352.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.503297, 0.39728, 0.105467, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 20
+text = "Press
+ESC
+to pause the game."
+horizontal_alignment = 1
+
+[node name="key" type="Panel" parent="Node2D/esc"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -105.0
+offset_right = 31.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0cr88")
+
+[node name="esc2" type="Label" parent="Node2D/esc/key"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -11.5
+offset_right = 21.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.503297, 0.39728, 0.105467, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 21
+text = "esc"
+horizontal_alignment = 1
+
+[node name="wasd" type="Label" parent="Node2D"]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 54.0
+offset_right = -86.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.503297, 0.39728, 0.105467, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 20
+text = "Use
+W,A,S,D
+to move your avatar."
+horizontal_alignment = 1
+
+[node name="skey" type="Panel" parent="Node2D/wasd"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -105.0
+offset_right = 31.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0cr88")
+
+[node name="S" type="Label" parent="Node2D/wasd/skey"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -20.0
+offset_right = 21.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.503297, 0.39728, 0.105467, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 21
+text = "S"
+horizontal_alignment = 1
+
+[node name="wkey" type="Panel" parent="Node2D/wasd"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -175.0
+offset_right = 31.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0cr88")
+
+[node name="W" type="Label" parent="Node2D/wasd/wkey"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -20.5
+offset_right = 21.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.503297, 0.39728, 0.105467, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 21
+text = "W"
+horizontal_alignment = 1
+
+[node name="dkey" type="Panel" parent="Node2D/wasd"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = -105.0
+offset_right = 101.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0cr88")
+
+[node name="D" type="Label" parent="Node2D/wasd/dkey"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -20.5
+offset_right = 21.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.503297, 0.39728, 0.105467, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 21
+text = "D
+"
+horizontal_alignment = 1
+
+[node name="akey" type="Panel" parent="Node2D/wasd"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -105.0
+offset_right = -39.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0cr88")
+
+[node name="D2" type="Label" parent="Node2D/wasd/akey"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -20.5
+offset_right = 21.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.503297, 0.39728, 0.105467, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_ehuit")
+theme_override_font_sizes/font_size = 21
+text = "A"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Node2D/back button" to="Node2D/back button" method="_on_pressed"]

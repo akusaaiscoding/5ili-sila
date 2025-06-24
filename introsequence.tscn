@@ -1,0 +1,667 @@
+[gd_scene load_steps=30 format=3 uid="uid://i6usu0b7h6c5"]
+
+[ext_resource type="Script" uid="uid://cp6gq1abex2vg" path="res://Scripts/Intro/introsequence.gd" id="1_txde7"]
+[ext_resource type="FontFile" uid="uid://w2k42lcmfuc3" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="2_0l6vf"]
+[ext_resource type="Texture2D" uid="uid://knrm6clg81pd" path="res://Image Assets/Heart.PNG" id="3_vnp4s"]
+[ext_resource type="Script" uid="uid://d0mw0wpnoe3sg" path="res://Scripts/Intro/stbut.gd" id="4_2ug0l"]
+[ext_resource type="Script" uid="uid://c44ovc3eqate" path="res://Scripts/Intro/kbut.gd" id="5_vmgfj"]
+[ext_resource type="FontFile" uid="uid://d01411ragm2o4" path="res://Fonts/KiwiSoda.ttf" id="6_ll4uq"]
+[ext_resource type="Texture2D" uid="uid://jlxncc64qr2d" path="res://Image Assets/Sila 5 Kadita_Good.PNG" id="7_5dv2j"]
+[ext_resource type="Script" uid="uid://c613o25iao8ac" path="res://Scripts/Intro/mbut.gd" id="8_3hfb2"]
+[ext_resource type="Texture2D" uid="uid://cfr7s16o4exm1" path="res://Image Assets/Sila 4 Musya_Good.PNG" id="9_124o5"]
+[ext_resource type="Script" uid="uid://b387iuop0dmaf" path="res://Scripts/Intro/sbut.gd" id="10_eqvu0"]
+[ext_resource type="Texture2D" uid="uid://c2t0px4uayfj4" path="res://Image Assets/Sila 3 Siti_Good.PNG" id="11_e7ka0"]
+[ext_resource type="Script" uid="uid://brjxxsi6fyaos" path="res://Scripts/Intro/abut.gd" id="12_pq4iw"]
+[ext_resource type="Texture2D" uid="uid://n86ke84g2s26" path="res://Image Assets/Sila 2 Adila_Good.PNG" id="13_lcx1h"]
+[ext_resource type="Script" uid="uid://ga7uuvnc6211" path="res://Scripts/Intro/ebut.gd" id="14_y3p1g"]
+[ext_resource type="Texture2D" uid="uid://cleug5cie173f" path="res://Image Assets/Sila 1 Esa_Good.PNG" id="15_kr7vr"]
+[ext_resource type="Script" uid="uid://wu53wo6wll56" path="res://Scripts/Intro/gbut.gd" id="16_r06i0"]
+[ext_resource type="Texture2D" uid="uid://bmt4unjntwoyx" path="res://Image Assets/Garu_Pixel (ALL SILA).PNG" id="17_bhook"]
+[ext_resource type="Script" uid="uid://ctf5cxk0vdiao" path="res://Scripts/Intro/enbut.gd" id="18_228y2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3qyj"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbwx4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbwx4"]
+texture = ExtResource("3_vnp4s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f5bpx"]
+texture = ExtResource("3_vnp4s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hicge"]
+texture = ExtResource("3_vnp4s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w4l5t"]
+texture = ExtResource("7_5dv2j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jusy5"]
+texture = ExtResource("9_124o5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_umt5m"]
+texture = ExtResource("11_e7ka0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gktq"]
+texture = ExtResource("13_lcx1h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2b1hj"]
+texture = ExtResource("15_kr7vr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mbig"]
+texture = ExtResource("17_bhook")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_txde7")
+
+[node name="start" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h3qyj")
+
+[node name="Label" type="Label" parent="start"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.5
+offset_top = -68.5
+offset_right = 540.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0l6vf")
+theme_override_font_sizes/font_size = 28
+text = "In a peaceful and prosperous world,
+
+there were 5 deities,
+
+known as the Silas,"
+horizontal_alignment = 1
+
+[node name="stbut" type="Button" parent="start"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -95.0
+offset_right = 34.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pbwx4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pbwx4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f5bpx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hicge")
+script = ExtResource("4_2ug0l")
+
+[node name="kadita" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h3qyj")
+
+[node name="kbut" type="Button" parent="kadita"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -95.0
+offset_right = 34.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pbwx4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pbwx4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f5bpx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hicge")
+script = ExtResource("5_vmgfj")
+
+[node name="Label" type="Label" parent="kadita"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -75.5
+offset_right = 443.0
+offset_bottom = 75.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.827451, 0.627451, 0.301961, 1)
+theme_override_fonts/font = ExtResource("6_ll4uq")
+theme_override_font_sizes/font_size = 150
+text = "Kadita"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="kadita"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 59.0
+offset_right = 443.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0l6vf")
+theme_override_font_sizes/font_size = 40
+text = "who believed in
+social justice,"
+horizontal_alignment = 1
+
+[node name="kaditaimg" type="Panel" parent="kadita"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -472.0
+offset_top = -258.0
+offset_right = 44.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_w4l5t")
+
+[node name="musya" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h3qyj")
+
+[node name="mbut" type="Button" parent="musya"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -95.0
+offset_right = 34.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pbwx4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pbwx4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f5bpx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hicge")
+script = ExtResource("8_3hfb2")
+
+[node name="Label" type="Label" parent="musya"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -75.5
+offset_right = 443.0
+offset_bottom = 75.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.827451, 0.627451, 0.301961, 1)
+theme_override_fonts/font = ExtResource("6_ll4uq")
+theme_override_font_sizes/font_size = 150
+text = "Musya"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="musya"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 76.0
+offset_right = 443.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0l6vf")
+theme_override_font_sizes/font_size = 40
+text = "who protected
+sovereignty
+of the people,"
+horizontal_alignment = 1
+
+[node name="musyaimg" type="Panel" parent="musya"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 102.0
+offset_right = 684.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jusy5")
+
+[node name="siti" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h3qyj")
+
+[node name="sbut" type="Button" parent="siti"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -95.0
+offset_right = 34.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pbwx4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pbwx4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f5bpx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hicge")
+script = ExtResource("10_eqvu0")
+
+[node name="Label" type="Label" parent="siti"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -75.5
+offset_right = 443.0
+offset_bottom = 75.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.827451, 0.627451, 0.301961, 1)
+theme_override_fonts/font = ExtResource("6_ll4uq")
+theme_override_font_sizes/font_size = 150
+text = "Siti"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="siti"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 59.0
+offset_right = 443.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0l6vf")
+theme_override_font_sizes/font_size = 40
+text = "who unified
+society,"
+horizontal_alignment = 1
+
+[node name="sitiimg" type="Panel" parent="siti"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 102.0
+offset_right = 684.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_umt5m")
+
+[node name="adila" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h3qyj")
+
+[node name="abut" type="Button" parent="adila"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -95.0
+offset_right = 34.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pbwx4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pbwx4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f5bpx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hicge")
+script = ExtResource("12_pq4iw")
+
+[node name="Label" type="Label" parent="adila"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -75.5
+offset_right = 443.0
+offset_bottom = 75.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.827451, 0.627451, 0.301961, 1)
+theme_override_fonts/font = ExtResource("6_ll4uq")
+theme_override_font_sizes/font_size = 150
+text = "Adila"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="adila"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 59.0
+offset_right = 443.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0l6vf")
+theme_override_font_sizes/font_size = 40
+text = "who kept the world
+civilized and just,"
+horizontal_alignment = 1
+
+[node name="adilaimg" type="Panel" parent="adila"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 102.0
+offset_right = 684.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8gktq")
+
+[node name="esa" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h3qyj")
+
+[node name="ebut" type="Button" parent="esa"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -95.0
+offset_right = 34.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pbwx4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pbwx4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f5bpx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hicge")
+script = ExtResource("14_y3p1g")
+
+[node name="Label" type="Label" parent="esa"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -75.5
+offset_right = 443.0
+offset_bottom = 75.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.827451, 0.627451, 0.301961, 1)
+theme_override_fonts/font = ExtResource("6_ll4uq")
+theme_override_font_sizes/font_size = 150
+text = "Esa"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="esa"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 59.0
+offset_right = 443.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0l6vf")
+theme_override_font_sizes/font_size = 40
+text = "who defended
+the people’s beliefs
+in open-mindedness,"
+horizontal_alignment = 1
+
+[node name="esaimg" type="Panel" parent="esa"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 102.0
+offset_right = 684.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_2b1hj")
+
+[node name="garu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h3qyj")
+
+[node name="gbut" type="Button" parent="garu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -95.0
+offset_right = 34.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pbwx4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pbwx4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f5bpx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hicge")
+script = ExtResource("16_r06i0")
+
+[node name="Label" type="Label" parent="garu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -75.5
+offset_right = 443.0
+offset_bottom = 75.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.827451, 0.627451, 0.301961, 1)
+theme_override_fonts/font = ExtResource("6_ll4uq")
+theme_override_font_sizes/font_size = 150
+text = "Garu"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="garu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = 76.0
+offset_right = 499.0
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0l6vf")
+theme_override_font_sizes/font_size = 40
+text = "the protector
+of the deities
+and the sole messenger
+of their duties."
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="garu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -124.0
+offset_right = 499.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0l6vf")
+theme_override_font_sizes/font_size = 40
+text = "and"
+horizontal_alignment = 1
+
+[node name="garuimg" type="Panel" parent="garu"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 102.0
+offset_right = 684.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6mbig")
+
+[node name="end" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h3qyj")
+
+[node name="Label" type="Label" parent="end"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -582.5
+offset_top = -124.5
+offset_right = 582.5
+offset_bottom = 124.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0l6vf")
+theme_override_font_sizes/font_size = 28
+text = "These deities protected and watched over the land,
+bringing hope and principle.
+
+One day,
+corruption struck and Garu disappeared without a trace.
+
+Without their protector, corruption spread across the land,
+slowly engulfing the Silas, bringing chaos upon the once peaceful land.
+"
+horizontal_alignment = 1
+
+[node name="enbut" type="Button" parent="end"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -95.0
+offset_right = 34.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pbwx4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pbwx4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f5bpx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hicge")
+script = ExtResource("18_228y2")
+
+[connection signal="pressed" from="start/stbut" to="start/stbut" method="_on_pressed"]
+[connection signal="pressed" from="kadita/kbut" to="kadita/kbut" method="_on_pressed"]
+[connection signal="pressed" from="musya/mbut" to="musya/mbut" method="_on_pressed"]
+[connection signal="pressed" from="siti/sbut" to="siti/sbut" method="_on_pressed"]
+[connection signal="pressed" from="adila/abut" to="adila/abut" method="_on_pressed"]
+[connection signal="pressed" from="esa/ebut" to="esa/ebut" method="_on_pressed"]
+[connection signal="pressed" from="garu/gbut" to="garu/gbut" method="_on_pressed"]
+[connection signal="pressed" from="end/enbut" to="end/enbut" method="_on_pressed"]
