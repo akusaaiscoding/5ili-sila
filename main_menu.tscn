@@ -1,0 +1,130 @@
+[gd_scene load_steps=21 format=3 uid="uid://dcg4os67dpubf"]
+
+[ext_resource type="Script" uid="uid://bt2wpju8f67y4" path="res://Scripts/Main Menu/main_menu.gd" id="1_glbon"]
+[ext_resource type="FontFile" uid="uid://w2k42lcmfuc3" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="2_glbon"]
+[ext_resource type="PackedScene" uid="uid://bmggon5u2jkbw" path="res://Scenes/AnimatedMainMenuScreen.tscn" id="2_jix8l"]
+[ext_resource type="Texture2D" uid="uid://ci6nrqdv3amcs" path="res://Image Assets/silisilabutton.png" id="4_glbon"]
+[ext_resource type="Texture2D" uid="uid://fe3qntqmsn6w" path="res://Image Assets/5ili5ila-Game-Logo3.png" id="4_jix8l"]
+[ext_resource type="Texture2D" uid="uid://c54jjln0tujq3" path="res://Image Assets/silisilabuttonhover.png" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://dhb6x7hdpmgb2" path="res://Image Assets/silisilabuttonpress.png" id="5_8qtwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nlkkf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dy7ct"]
+texture = ExtResource("4_qe12f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0o4t1"]
+texture = ExtResource("5_8qtwp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
+texture = ExtResource("4_glbon")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe12f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0k4wn"]
+texture = ExtResource("4_qe12f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j5v2v"]
+texture = ExtResource("5_8qtwp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qe12f"]
+texture = ExtResource("4_glbon")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qtwp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iotk1"]
+texture = ExtResource("4_qe12f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w44g7"]
+texture = ExtResource("5_8qtwp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qtwp"]
+texture = ExtResource("4_glbon")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glbon"]
+texture = ExtResource("4_jix8l")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glbon")
+
+[node name="Node2D" parent="." instance=ExtResource("2_jix8l")]
+position = Vector2(640, 360)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -17.0
+offset_right = 86.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_glbon")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nlkkf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dy7ct")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0o4t1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nlkkf")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_glbon")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qe12f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0k4wn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j5v2v")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qe12f")
+text = "Tutorial"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_glbon")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8qtwp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iotk1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_w44g7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8qtwp")
+text = "Quit Game"
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -296.0
+offset_top = 56.0
+offset_right = 296.0
+offset_bottom = 352.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_glbon")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_quit_pressed"]
