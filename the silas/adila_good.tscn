@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhugkim3nhmhy"]
+
+[ext_resource type="Texture2D" uid="uid://cmc2ciuyqicld" path="res://the silas/character.png" id="1_gw67q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om4vi"]
+atlas = ExtResource("1_gw67q")
+region = Rect2(780, 136, 130, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xrta"]
+atlas = ExtResource("1_gw67q")
+region = Rect2(910, 136, 130, 131)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ytnwh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om4vi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xrta")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dshn4"]
+size = Vector2(62, 111)
+
+[node name="AdilaGood" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ytnwh")
+frame_progress = 0.28109
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 3.5)
+shape = SubResource("RectangleShape2D_dshn4")

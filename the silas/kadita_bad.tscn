@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://5cjms7hby1ng"]
+
+[ext_resource type="Texture2D" uid="uid://cmc2ciuyqicld" path="res://the silas/character.png" id="1_3kxnc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oce07"]
+atlas = ExtResource("1_3kxnc")
+region = Rect2(263, 264, 130, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvr56"]
+atlas = ExtResource("1_3kxnc")
+region = Rect2(393, 264, 130, 132)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovbw5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oce07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvr56")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j35gi"]
+radius = 19.0
+height = 62.0
+
+[node name="KaditaBad" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.5, -3.55385)
+scale = Vector2(0.546154, 0.546154)
+sprite_frames = SubResource("SpriteFrames_ovbw5")
+frame_progress = 0.506459
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 0)
+shape = SubResource("CapsuleShape2D_j35gi")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bol5rb684kj8v"]
+
+[ext_resource type="Texture2D" uid="uid://cmc2ciuyqicld" path="res://the silas/character.png" id="1_ymd0s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ank8u"]
+atlas = ExtResource("1_ymd0s")
+region = Rect2(0, 136, 130, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfobt"]
+atlas = ExtResource("1_ymd0s")
+region = Rect2(130, 136, 130, 131)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rq1tg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ank8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfobt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dlun3"]
+radius = 27.0
+height = 100.0
+
+[node name="AdilaBad" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.788562, 0.788562)
+sprite_frames = SubResource("SpriteFrames_rq1tg")
+frame_progress = 0.656488
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_dlun3")
