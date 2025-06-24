@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://6kn3m6vyq2up"]
+
+[ext_resource type="Script" uid="uid://t0gfxc2x4fb1" path="res://scripts/next_world.gd" id="1_7ssfc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tiuy"]
+
+[node name="NextWorld" type="Area2D"]
+script = ExtResource("1_7ssfc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6tiuy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

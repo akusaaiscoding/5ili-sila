@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx2jsduc2w3dv"]
+
+[ext_resource type="Script" uid="uid://dub5pbbs3cfg5" path="res://scripts/dialog_box.gd" id="1_tihiy"]
+[ext_resource type="Texture2D" uid="uid://3biwffwm5e61" path="res://Text box.PNG" id="2_df88m"]
+
+[node name="DialogBox" type="CanvasLayer"]
+script = ExtResource("1_tihiy")
+
+[node name="background" type="TextureRect" parent="."]
+offset_left = -129.0
+offset_top = -207.0
+offset_right = 1151.0
+offset_bottom = 513.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_df88m")
+
+[node name="NameLabel" type="Label" parent="background"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextLable" type="Label" parent="background"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+autowrap_mode = 2

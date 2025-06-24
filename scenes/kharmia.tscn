@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://donpi1bq0b8ly"]
+
+[ext_resource type="Script" uid="uid://dhq24r210f1su" path="res://scripts/kharmia.gd" id="1_1o812"]
+[ext_resource type="Texture2D" uid="uid://bagdo05mbfkqr" path="res://character.png" id="2_1atnw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gka7p"]
+atlas = ExtResource("2_1atnw")
+region = Rect2(3, 0, 130, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jpt7"]
+atlas = ExtResource("2_1atnw")
+region = Rect2(133, 0, 130, 132)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cy2sn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gka7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jpt7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v52gv"]
+size = Vector2(29, 33)
+
+[node name="Kharmia" type="Area2D"]
+script = ExtResource("1_1o812")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.90735e-06, 0)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_cy2sn")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 0.5)
+shape = SubResource("RectangleShape2D_v52gv")
