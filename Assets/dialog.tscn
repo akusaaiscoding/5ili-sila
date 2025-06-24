@@ -1,0 +1,1324 @@
+[gd_scene load_steps=27 format=3 uid="uid://d3n5sc1e2cj33"]
+
+[ext_resource type="Script" uid="uid://ig0rndgjyvg0" path="res://Scripts/Dialog/wakeupcave.gd" id="1_3nas4"]
+[ext_resource type="Texture2D" uid="uid://c47p618kwib5" path="res://Image Assets/garuemo/Garu_Normal.PNG" id="2_3nas4"]
+[ext_resource type="Texture2D" uid="uid://bjq1qk5eud1wu" path="res://Image Assets/Text box.PNG" id="2_xg2mj"]
+[ext_resource type="FontFile" uid="uid://w2k42lcmfuc3" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="3_3nas4"]
+[ext_resource type="Texture2D" uid="uid://knrm6clg81pd" path="res://Image Assets/Heart.PNG" id="4_ionbg"]
+[ext_resource type="Script" path="res://Scenes/exit_cave.gd" id="6_ionbg"]
+[ext_resource type="Script" path="res://Scenes/khar_1.gd" id="7_ofp2y"]
+[ext_resource type="Script" path="res://Scenes/kaditaevil.gd" id="8_3dls6"]
+[ext_resource type="Script" path="res://Scenes/kaditawin.gd" id="8_gl4vm"]
+[ext_resource type="Script" path="res://Scenes/khar_2.gd" id="10_3dls6"]
+[ext_resource type="Script" path="res://Scenes/musyaevil.gd" id="11_y6rcn"]
+[ext_resource type="Script" path="res://Scenes/musyawin.gd" id="12_2bvuo"]
+[ext_resource type="Script" path="res://Scenes/khar_3.gd" id="13_lclun"]
+[ext_resource type="Script" uid="uid://dioto4nmlo5ti" path="res://Scripts/Dialog/sitievil.gd" id="14_vh8rv"]
+[ext_resource type="Script" uid="uid://doqvd2e8tyq5d" path="res://Scripts/Dialog/sitiwin.gd" id="15_gkwrw"]
+[ext_resource type="Script" path="res://Scenes/khar_4.gd" id="16_e7lv4"]
+[ext_resource type="Script" path="res://Scenes/adilaevil.gd" id="17_pfg5j"]
+[ext_resource type="Script" path="res://Scenes/adilawin.gd" id="18_upfe5"]
+[ext_resource type="Script" path="res://Scenes/khar_5.gd" id="19_kr02g"]
+[ext_resource type="Script" path="res://Scenes/esaevil.gd" id="20_upfe5"]
+[ext_resource type="Script" path="res://Scenes/esawin.gd" id="21_kr02g"]
+[ext_resource type="Script" path="res://Scenes/koruevil.gd" id="22_go73k"]
+[ext_resource type="Script" path="res://Scenes/koruwin.gd" id="23_ylrh8"]
+
+[sub_resource type="Animation" id="Animation_ofp2y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(936, 192)]
+}
+
+[sub_resource type="Animation" id="Animation_gl4vm"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(936, 192), Vector2(936, 196)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3dls6"]
+_data = {
+&"RESET": SubResource("Animation_ofp2y"),
+&"idle": SubResource("Animation_gl4vm")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="wakeupcave" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_3nas4")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="wakeupcave"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="wakeupcave"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="wakeupcave"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="wakeupcave"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="wakeupcave/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="wakeupcave"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="exit cave" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("6_ionbg")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="exit cave"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="exit cave"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="exit cave"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="exit cave"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="exit cave/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="exit cave"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="khar1" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("7_ofp2y")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="khar1"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="khar1"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="khar1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="khar1"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="khar1/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="khar1"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="kaditaevil" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("8_3dls6")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="kaditaevil"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="kaditaevil"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="kaditaevil"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="kaditaevil"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="kaditaevil/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="kaditaevil"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="kaditawin" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("8_gl4vm")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="kaditawin"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="kaditawin"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="kaditawin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="kaditawin"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="kaditawin/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="kaditawin"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="khar2" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("10_3dls6")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="khar2"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="khar2"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="khar2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="khar2"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="khar2/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="khar2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="musyaevil" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("11_y6rcn")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="musyaevil"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="musyaevil"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="musyaevil"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="musyaevil"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="musyaevil/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="musyaevil"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="musyawin" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("12_2bvuo")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="musyawin"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="musyawin"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="musyawin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="musyawin"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="musyawin/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="musyawin"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="khar3" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("13_lclun")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="khar3"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="khar3"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="khar3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="khar3"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="khar3/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="khar3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="sitievil" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("14_vh8rv")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="sitievil"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="sitievil"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="sitievil"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="sitievil"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sitievil/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="sitievil"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="sitiwin" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("15_gkwrw")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="sitiwin"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="sitiwin"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="sitiwin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="sitiwin"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sitiwin/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="sitiwin"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="khar4" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("16_e7lv4")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="khar4"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="khar4"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="khar4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="khar4"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="khar4/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="khar4"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="adilaevil" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("17_pfg5j")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="adilaevil"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="adilaevil"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="adilaevil"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="adilaevil"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="adilaevil/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="adilaevil"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="adilawin" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("18_upfe5")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="adilawin"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="adilawin"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="adilawin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="adilawin"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="adilawin/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="adilawin"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="khar5" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("19_kr02g")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="khar5"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="khar5"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="khar5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="khar5"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="khar5/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="khar5"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="esaevil" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("20_upfe5")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="esaevil"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="esaevil"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="esaevil"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="esaevil"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="esaevil/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="esaevil"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="esawin" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("21_kr02g")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="esawin"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="esawin"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="esawin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="esawin"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="esawin/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="esawin"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="koruevil" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("22_go73k")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="koruevil"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="koruevil"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="koruevil"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="koruevil"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="koruevil/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="koruevil"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
+
+[node name="koruwin" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("23_ylrh8")
+metadata/_edit_group_ = true
+
+[node name="charimg" type="TextureRect" parent="koruwin"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 280.0
+texture = ExtResource("2_3nas4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="koruwin"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xg2mj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="koruwin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 65.0
+offset_right = -320.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3nas4")
+theme_override_fonts/bold_font = ExtResource("3_3nas4")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "Garu u better sak on [shake]deez nuts[/shake] yayaya!!
+
+please save ussssss!!!"
+
+[node name="Heart" type="Sprite2D" parent="koruwin"]
+position = Vector2(936, 192)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("4_ionbg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="koruwin/Heart"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dls6")
+}
+autoplay = "idle"
+
+[node name="namelabel" type="Label" parent="koruwin"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 432.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_3nas4")
+theme_override_font_sizes/font_size = 30
+text = "Garu"
+vertical_alignment = 1
