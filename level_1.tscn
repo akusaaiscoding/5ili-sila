@@ -1,0 +1,132 @@
+[gd_scene load_steps=15 format=3 uid="uid://c2tl1utr5am1w"]
+
+[ext_resource type="PackedScene" uid="uid://dd1oyrm1mdbby" path="res://scenes/firstlevel/win_1.tscn" id="1_dnkej"]
+[ext_resource type="PackedScene" uid="uid://dmrv46mbwn7i0" path="res://scenes/firstlevel/Sila5Evil.tscn" id="2_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://b6g3gc2m5xjgf" path="res://scenes/firstlevel/nosila_garu.tscn" id="3_wtwp4"]
+[ext_resource type="PackedScene" uid="uid://dwl6ddocwkn5n" path="res://scenes/borderback.tscn" id="4_iwr0g"]
+[ext_resource type="PackedScene" uid="uid://cucdafsmwdtq4" path="res://scenes/player.tscn" id="5_bahl2"]
+[ext_resource type="PackedScene" uid="uid://bk1hyt84xwy5t" path="res://scenes/firstlevel/cottonballs.tscn" id="6_np2pn"]
+[ext_resource type="PackedScene" uid="uid://cq5rfbhrjlux5" path="res://scenes/firstlevel/wheat.tscn" id="7_v6ha0"]
+[ext_resource type="PackedScene" uid="uid://bmncrr5l7ivxr" path="res://scenes/hearts.tscn" id="8_gmpev"]
+[ext_resource type="PackedScene" uid="uid://dtlu88l82hs00" path="res://scenes/border.tscn" id="9_mkypq"]
+[ext_resource type="PackedScene" uid="uid://4bx3ejjvp165" path="res://scenes/timer.tscn" id="10_ndtll"]
+[ext_resource type="PackedScene" uid="uid://duxs740oaefcj" path="res://scenes/firstlevel/countdown_1.tscn" id="11_7h2jl"]
+[ext_resource type="PackedScene" uid="uid://b3o4bv3w2usgb" path="res://scenes/gameover.tscn" id="12_mqh5v"]
+[ext_resource type="PackedScene" uid="uid://c210eo38rwaw2" path="res://scenes/pause.tscn" id="13_7o3do"]
+[ext_resource type="AudioStream" uid="uid://ie5sb35vmp62" path="res://music/level_1bgsound.mp3" id="14_mm8aj"]
+
+[node name="Level 1" type="Node2D"]
+process_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_mm8aj")
+volume_db = -10.0
+autoplay = true
+
+[node name="win_1" parent="." instance=ExtResource("1_dnkej")]
+
+[node name="nosilaGaru" parent="." instance=ExtResource("3_wtwp4")]
+position = Vector2(-976, 0)
+scale = Vector2(0.955, 0.955)
+
+[node name="Sila5Evil" parent="." instance=ExtResource("2_mm8aj")]
+position = Vector2(970, -27)
+scale = Vector2(0.91, 0.91)
+
+[node name="borderback" parent="." instance=ExtResource("4_iwr0g")]
+scale = Vector2(1.195, 1.195)
+
+[node name="player" parent="." instance=ExtResource("5_bahl2")]
+position = Vector2(0, -5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="cottonballs" parent="." instance=ExtResource("6_np2pn")]
+position = Vector2(512, -260)
+
+[node name="cottonballs2" parent="." instance=ExtResource("6_np2pn")]
+position = Vector2(-506, -261)
+
+[node name="wheat" parent="." instance=ExtResource("7_v6ha0")]
+position = Vector2(-631, 258)
+
+[node name="wheat2" parent="." instance=ExtResource("7_v6ha0")]
+position = Vector2(-283, 258)
+
+[node name="wheat3" parent="." instance=ExtResource("7_v6ha0")]
+position = Vector2(283, 258)
+
+[node name="wheat4" parent="." instance=ExtResource("7_v6ha0")]
+position = Vector2(631, 258)
+
+[node name="health_bar" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="health_bar"]
+offset_left = -613.0
+offset_top = -468.635
+offset_right = -125.0
+offset_bottom = -428.635
+
+[node name="heart" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(78.915, 0)
+layout_mode = 2
+
+[node name="hearts" parent="health_bar/HBoxContainer/heart" instance=ExtResource("8_gmpev")]
+position = Vector2(19, 21)
+scale = Vector2(0.132813, 0.132813)
+
+[node name="heart2" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(78.915, 0)
+layout_mode = 2
+
+[node name="hearts" parent="health_bar/HBoxContainer/heart2" instance=ExtResource("8_gmpev")]
+position = Vector2(19, 21)
+scale = Vector2(0.132813, 0.132813)
+
+[node name="heart3" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(78.915, 0)
+layout_mode = 2
+
+[node name="hearts" parent="health_bar/HBoxContainer/heart3" instance=ExtResource("8_gmpev")]
+position = Vector2(19, 21)
+scale = Vector2(0.132813, 0.132813)
+
+[node name="heart4" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(78.915, 0)
+layout_mode = 2
+
+[node name="hearts" parent="health_bar/HBoxContainer/heart4" instance=ExtResource("8_gmpev")]
+position = Vector2(19, 21)
+scale = Vector2(0.132813, 0.132813)
+
+[node name="heart5" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(78.915, 0)
+layout_mode = 2
+
+[node name="hearts" parent="health_bar/HBoxContainer/heart5" instance=ExtResource("8_gmpev")]
+position = Vector2(19, 21)
+scale = Vector2(0.132813, 0.132813)
+
+[node name="heart6" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(78.915, 0)
+layout_mode = 2
+
+[node name="hearts" parent="health_bar/HBoxContainer/heart6" instance=ExtResource("8_gmpev")]
+position = Vector2(19, 21)
+scale = Vector2(0.132813, 0.132813)
+
+[node name="Area2D" parent="." instance=ExtResource("9_mkypq")]
+scale = Vector2(1.135, 1.135)
+
+[node name="timer" parent="." instance=ExtResource("10_ndtll")]
+
+[node name="countdown_1" parent="." instance=ExtResource("11_7h2jl")]
+
+[node name="gameover" parent="." instance=ExtResource("12_mqh5v")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause" parent="CanvasLayer" instance=ExtResource("13_7o3do")]
+metadata/_edit_use_anchors_ = true
